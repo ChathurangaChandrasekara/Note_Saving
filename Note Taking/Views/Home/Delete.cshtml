@@ -1,0 +1,51 @@
+﻿@model Note_Taking.DTOModels.NoteDTO
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container" style="background-color:cadetblue; width:100%; height:550px;">
+    <div>
+        <label asp-for="Title">Title  :</label>
+        <input asp-for="Title" type="text" name="Title" placeholder="Title" size="52" />
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div>
+        <label asp-for="Body">Note :</label>
+        <br />
+
+        <textarea asp-for="Body" placeholder="Enter note" rows="10" cols="60">
+            </textarea>
+        <span asp-validation-for="Body"></span>
+    </div>
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalCenter">
+        Delete
+    </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete Note</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this note
+            </div>
+            <div class="modal-footer">
+                <form asp-action="Delete" asp-route-id="@Model.NoteId" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

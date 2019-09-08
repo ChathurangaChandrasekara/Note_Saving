@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Note_Taking.DTOModels.NoteDTO>
+@{
+    ViewData["Title"] = "Note List";
+}
+
+<div class="container"  style="background-color:cadetblue; width:100%; height:550px;">
+
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%" height="30"> Title</th>
+                    <th width="30%"> Create Date</th>
+                    <th width="30%"> Modified Date</th>
+                    <th width="5%"></th>
+                    <th width="5%"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td height="30"> @item.Title</td>
+                    <td > @item.CreateDate.ToString("yyyy/MM/dd - h:mm tt")</td>
+                    <td > @item.UpdateDate.ToString("yyyy/MM/dd - h:mm tt")</td>
+                    <td >
+                        <a class="btn btn-info btn-xs" asp-action="EditNote"  asp-route-id="@item.NoteId">Edit</a>
+                    </td>
+                    <td >
+                        <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.NoteId">Delete</a>
+                    </td>
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

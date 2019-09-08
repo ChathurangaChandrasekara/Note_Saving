@@ -1,0 +1,31 @@
+﻿@model Note_Taking.DTOModels.NoteDTO
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create Note";
+}
+
+
+<div class="container" style="background-color:cadetblue; width:100%; height:550px;">
+    <form method="post" asp-action="CreateNote" id="NoteForm">
+        <div asp-validation-summary="All"></div>
+
+        <div>
+            <label asp-for="Title">Title  :</label>
+            <input asp-for="Title" type="text" name="Title" placeholder="Title" size="52" />
+            <span asp-validation-for="Title"></span>
+        </div>
+
+        <div>
+            <label asp-for="Body">Note :</label>
+            <br />
+
+            <textarea asp-for="Body" placeholder="Enter note" rows="10" cols="60">
+            </textarea>
+            <span asp-validation-for="Body"></span>
+        </div>
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,63 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 100%;
+        height: 550px;
+        margin: auto;
+    }
+
+    .carousel-caption {
+        color: white;
+        border-color: black;
+        text-shadow: -2px 0 black,0 2px black,2px 0 black,0 -2px black;
+    }
+</style>
+
+<div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+
+            <div class="item active">
+                <img src=~/images/Image.jpg alt="Image1">
+                <div class="carousel-caption">
+                    <a asp-action="CreateNote"> <h3>Create a Note </h3> </a>
+                    <a asp-action="NoteList"> <h3>View Note List</h3> </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src=~/images/bigstock-Apple-on-School-Books-with-cop-14086715.jpg alt="Image2">
+                <div class="carousel-caption">
+                    <a asp-action="CreateNote"> <h3>Create a Note </h3> </a>
+                    <a asp-action="NoteList"> <h3>View Note List</h3> </a>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src=~/images/wp3194639.jpg alt="Image3">
+                <div class="carousel-caption">
+                    <a asp-action="CreateNote"> <h3>Create a Note </h3> </a>
+                    <a asp-action="NoteList"> <h3>View Note List</h3> </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
